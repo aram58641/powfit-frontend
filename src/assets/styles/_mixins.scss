@@ -1,0 +1,153 @@
+@import './variables';
+
+@mixin transform($values) {
+  -webkit-transform: $values;
+  -moz-transform: $values;
+  -ms-transform: $values;
+  -o-transform: $values;
+  transform: $values;
+}
+
+@mixin transform-origin($values...) {
+  -webkit-transform-origin: $values;
+  -moz-transform-origin: $values;
+  -ms-transform-origin: $values;
+  -o-transform-origin: $values;
+  transform-origin: $values;
+}
+
+@mixin box-sizing($values...) {
+  -webkit-box-sizing: $values;
+  -moz-box-sizing: $values;
+  -ms-box-sizing: $values;
+  -o-box-sizing: $values;
+  box-sizing: $values;
+}
+
+@mixin box-shadow($values...) {
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  -ms-box-shadow: $values;
+  -o-box-shadow: $values;
+  box-shadow: $values;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin long-text-dots {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin transition($values...) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -ms-transition: $values;
+  -o-transition: $values;
+  transition: $values;
+}
+
+@mixin filter($values...) {
+  -webkit-filter: $values;
+  -moz-filter: $values;
+  -ms-filter: $values;
+  -o-filter: $values;
+  filter: $values;
+}
+
+@mixin backdrop-filter($values...) {
+  -webkit-backdrop-filter: $values;
+  -moz-backdrop-filter: $values;
+  -ms-backdrop-filter: $values;
+  -o-backdrop-filter: $values;
+  backdrop-filter: $values;
+}
+
+@mixin animation($values...) {
+  -webkit-animation: $values;
+  -moz-animation: $values;
+  -ms-animation: $values;
+  -o-animation: $values;
+  animation: $values;
+}
+
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin no-appearance {
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+@mixin key-frames($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin form-control {
+  border-radius: $border-radius;
+  @include box-shadow(0 1px 4px rgba(#000000, 0.15));
+}
+
+@mixin responsive-range($size-min, $size-max) {
+  $range-min: map-get($responsive-sizes, $size-min);
+  $range-max: map-get($responsive-sizes, $size-max);
+  $min: map-get($range-min, 'min');
+  $max: map-get($range-max, 'max');
+
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin responsive-for($size) {
+  @include responsive-range($size, $size) {
+    @content;
+  }
+}
+
+@mixin responsive-min($size-min) {
+  @include responsive-range($size-min, 'xxl') {
+    @content;
+  }
+}
+
+@mixin responsive-max($size-max) {
+  @include responsive-range('xxs', $size-max) {
+    @content;
+  }
+}

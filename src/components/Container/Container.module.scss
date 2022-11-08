@@ -1,0 +1,12 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+$container-size: 1400px;
+
+.app-container {
+  max-width: $container-size;
+  width: 100%;
+  padding: 0 $space-default;
+  margin: 0 auto;
+  position: relative;
+}

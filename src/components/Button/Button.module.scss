@@ -1,0 +1,25 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.button {
+  font-size: 0.875rem;
+  padding: 0 40px;
+  line-height: 53px;
+
+  &.button-rectangle {
+    border-radius: 0;
+  }
+  &.button-rounded {
+    border-radius: $border-radius;
+  }
+
+  &.button-green {
+    background-color: $color-green;
+  }
+  &.button-white {
+    background-color: $color-white;
+  }
+  &.button-gray {
+    background-color: $color-gray;
+  }
+}
