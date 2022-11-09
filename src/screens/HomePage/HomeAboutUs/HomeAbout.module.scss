@@ -1,0 +1,38 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.AboutHomeMain {
+  width: 100%;
+  min-height: 700px;
+  background-color: $color-bg-light;
+}
+
+.imageBox{
+    width: 680px;
+    height: 806px;
+    background-image: url('../../../assets/images/homeAbout/leftImage.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.dfLRBlock{
+    display: flex;
+    justify-content: space-between;
+}
+
+.textRightBar{
+    width: 560px;
+    font-size: 50px;
+    color: $color-white;
+    font-weight: 700;
+
+    span{
+        color: $color-green;
+    }
+}
+
+.rightBox{
+    padding-right: 30px;
+
+}

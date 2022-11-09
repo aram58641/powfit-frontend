@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.cardImage{
+    max-height: 340px;
+    max-width: 440px;
+    opacity: .7;
+}
+
+.cardLayer{
+    width: 440px;
+    height: 340px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    margin: 5px;
+}
+
+.textCard{
+    font-size: 38px;
+    color:$color-white;
+    font-family: 'Kanit';
+    font-weight: 700;
+}
+.textCard:hover{
+    color: rgb(135, 135, 135);
+}
+
+.cardOpacity{
+    width: 100%;
+    height: 100%;
+    background-color: #1d1f1488;
+    padding: 40px;
+    display: flex;
+    align-items: flex-end;
+}

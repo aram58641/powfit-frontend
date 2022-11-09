@@ -2,9 +2,24 @@
 @import '../../assets/styles/mixins';
 
 .button {
-  font-size: 0.875rem;
-  padding: 0 40px;
-  line-height: 53px;
+  & {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 700 1.2rem 'Roboto Slab', sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+    
+    &:focus { outline: 2px dotted #55d7dc; }
+  }
+  
+  &{
+    @include btn-border-drawing($color-green, $color-white, 3px, bottom, right);
+  }
+  
+  
+  
 
   &.button-rectangle {
     border-radius: 0;
@@ -21,5 +36,8 @@
   }
   &.button-gray {
     background-color: $color-gray;
+  }
+  &.button-transparent {
+    background-color: transparent;
   }
 }

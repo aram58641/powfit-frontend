@@ -1,0 +1,126 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.carousel-item {
+  transition: transform 5s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 5s;
+}
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1.2, 1.2);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+.slideShowImage,
+.slideShowImage2 {
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: zoom 5s;
+  animation: zoom 5s;
+}
+.slideShowImage {
+  background-image: url('../../../assets/images/homeSlideShow/slideShowImage1.jpg');
+}
+.slideShowImage2 {
+  background-image: url('../../../assets/images/homeSlideShow/slideShowImage2.jpg');
+}
+.slideShowImage2 > div,
+.slideShowImage > div {
+  width: 100%;
+  height: 100%;
+  background-color:#1e1f14c4;
+}
+
+.textSlideShow {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: textSlideAnime;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  
+@include responsive-mobile {
+  
+  padding: 20px;
+}
+}
+
+@keyframes textSlideAnime {
+  0% {
+    transform: translateX(20px) translateY(20px);
+  }
+  100% {
+    transform: translateX(-200px) translateY(50px);
+  }
+}
+
+@include responsive-tablet {
+  @keyframes textSlideAnime {
+    0% {
+      transform: translateX(20px) translateY(20px);
+    }
+    100% {
+      transform: translateX(-100px) translateY(40px);
+    }
+  }
+}
+
+@include responsive-mobile {
+  @keyframes textSlideAnime {
+    0% {
+      transform: translateX(40px) translateY(0);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+}
+
+.slideText {
+  width: 700px;
+  @include responsive-tablet {
+    width: 400px;
+  }
+}
+
+.slideText > h1 {
+  color: $color-white;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: 4rem;
+
+  @include responsive-tablet {
+    font-size: 2rem;
+  }
+  @include responsive-mobile {
+    font-size: 2rem;
+  }
+}
+.slideText > p {
+  color: $color-white;
+  margin: 20px 0;
+}
+.textColorsSlide {
+  color: $color-green;
+}

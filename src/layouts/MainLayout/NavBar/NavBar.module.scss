@@ -1,0 +1,64 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+/* header */
+
+.header {
+  background-color: $color-bg-light;
+  height: 115px;
+}
+.togglerIconMenu {
+  position: relative;
+  z-index: 5;
+}
+
+.mainNavbar {
+  display: flex;
+  justify-content: flex-end;
+}
+.subMenu {
+  background-color: #1d1f14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.subMenu > li > a:hover {
+  background-color: unset !important;
+  color: #cdde6a;
+}
+.subMenu > li > a {
+  color: white;
+  margin-top: 20px;
+}
+
+.navbarNav > li > a {
+  color: white;
+  margin-left: 50px;
+  height: 35px;
+  font-weight: 600;
+}
+.navbarNav > li > a:hover {
+  color: rgb(205, 222, 107) !important;
+  border-bottom: 2px solid rgb(205, 222, 107);
+  transition: 0.3s;
+}
+
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: none;
+  }
+  .navbar .nav-item:hover .nav-link {
+  }
+  .navbar .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  .navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    display: none;
+  }
+}

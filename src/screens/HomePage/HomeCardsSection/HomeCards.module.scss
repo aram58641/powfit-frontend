@@ -1,0 +1,20 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.MainCardsSection{
+    width: 100%;
+    min-height: 380px;
+    background-color: $color-bg-light;
+    position: relative;
+
+}
+
+.cardsPos{
+  position: relative;
+  top: -70px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
